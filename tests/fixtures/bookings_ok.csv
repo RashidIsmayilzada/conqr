@@ -1,0 +1,5 @@
+buyer_email,full_name,payment,table,baby_kid
+anna@example.com,Anna Smith,paid,12,no
+anna@example.com,Bob Smith,paid,12,no
+anna@example.com,Cara Smith,pay_at_restaurant,12,yes
+lee@example.com,Lee Park,paid,4,no

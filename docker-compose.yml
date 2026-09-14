@@ -1,0 +1,25 @@
+services:
+  watcher:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    restart: unless-stopped
+    volumes:
+      - watcher_data:/app/database
+
+  scanner:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    environment:
+      PORT: 3000
+      CHECKIN_PIN: ${CHECKIN_PIN:-4163}
+      CHECKIN_SYNC_SECRET: ${CHECKIN_SYNC_SECRET:-change-me}
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+
+volumes:
+  watcher_data:

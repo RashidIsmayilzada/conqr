@@ -1,0 +1,28 @@
+~~~~~~~~~~~~~~~~~~~~
+version 0.4
+~~~~~~~~~~~~~~~~~~~~
+
+* add con_noprompt.py which will not prompt if executed for automatic boot
+
+~~~~~~~~~~~~~~~~~~~~
+version 0.3
+~~~~~~~~~~~~~~~~~~~~
+
+* fixed an exposure that would not do a full comparison of the hash string which could allow someone to do a small compare vs the entire string (special thanks to overflowingINT for the reported issue)
+
+~~~~~~~~~~~~~~~~~~~~
+version 0.2
+~~~~~~~~~~~~~~~~~~~~
+
+* Added a check for python-imaging, if it's not installed, it will error out
+* Fixed a report of a query string parameter that was not in the proper place when generating the QRCode
+* Moved the port to the standard port 80 within the codeset instead of 8080
+* Fixed an issue that would cause a user that has already registered to not be detected
+* Fixed an issue that would cause an exceptions if user was not already inside of the con database registration
+* Fixed an issue that would check for reg instead of reg_query and cause a mismatch
+
+~~~~~~~~~~~~~~~~~~~~
+version 0.1
+~~~~~~~~~~~~~~~~~~~~
+
+* first release of ConQR

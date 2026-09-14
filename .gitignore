@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+conferences/*/database/*.txt
+conferences/*/database/*.csv
+conferences/*/configuration/config
+qrcode.png
+.DS_Store
+
+# Secrets / env files (never commit real credentials)
+.env
+.env.*
+!.env.example
+!web/.env.example
+
+# Real guest data / bookings (contains personal emails)
+database/guests.csv
+web/data/guests.csv
+conferences/*/bookings.csv
+bookings.csv
