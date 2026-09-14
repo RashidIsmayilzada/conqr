@@ -45,6 +45,7 @@ PAYMENT_ALIASES = {
 	"paid": "paid",
 	"pay_at_restaurant": "pay_at_restaurant",
 	"pay at restaurant": "pay_at_restaurant",
+	"pay in restaurant": "pay_at_restaurant",
 	"unpaid": "pay_at_restaurant",
 	"odenilib": "paid",
 	"\u00f6d\u0259nilib": "paid",
