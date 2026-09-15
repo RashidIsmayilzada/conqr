@@ -1,0 +1,32 @@
+# Standalone local scanner (no Railway/Vercel needed).
+#
+# Usage:
+#   1. Find this machine's real LAN IP (the one your phone can reach), e.g.
+#      via `ipconfig` on Windows or `ip addr` on Linux/macOS.
+#   2. Copy .env.local-scanner.example to .env.local-scanner and set
+#      CONQR_IP to that LAN IP.
+#   3. Run: docker compose -f docker-compose.local-scanner.yml up --build
+#   4. On your phone (same WiFi), open http://<CONQR_IP>:8080/ to confirm
+#      "Scanner ready" shows up.
+#   5. Make sure QR_HOST in the main .env (used when sending tickets) is set
+#      to the same <CONQR_IP> so QR codes point here.
+#
+# This container only runs the check-in scanner + guest database. It does
+# not send emails - use the main Dockerfile / docker-compose.yml "watcher"
+# service (or run src/conqr.py send/watch locally) for that.
+
+services:
+  local-scanner:
+    build:
+      context: .
+      dockerfile: Dockerfile.local-scanner
+    env_file:
+      - .env.local-scanner
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    volumes:
+      - local_scanner_data:/app/database
+
+volumes:
+  local_scanner_data:

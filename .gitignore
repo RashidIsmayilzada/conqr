@@ -13,6 +13,7 @@ qrcode.png
 .env.*
 !.env.example
 !web/.env.example
+!.env.local-scanner.example
 
 # Real guest data / bookings (contains personal emails)
 database/guests.csv
